@@ -3,13 +3,12 @@ import os
 
 
 @pytest.fixture
-def driver_args():
+def chrome_options(chrome_options, pytestconfig):
     if os.environ.get('IS_TESTERY') == 'true':
-        print(os.environ.get('TESTERY_CHROME_ARGS'))
-        print(os.environ.get('TESTERY_CHROME_ARGS').split(';'))
-        return os.environ.get('TESTERY_CHROME_ARGS').split(';')
-    else:
-        return []
+        for arg in os.environ.get('TESTERY_CHROME_ARGS').split(';'):
+            chrome_options.add_argument(arg)
+
+    return chrome_options
 
 
 @pytest.mark.webtest
