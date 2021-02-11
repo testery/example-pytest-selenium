@@ -20,7 +20,9 @@ def test_example(selenium):
 
 @pytest.mark.parametrize(
     ("url", "title"), [pytest.param('http://www.testery.io',
-                                    "Testery - Cloud-based continuous testing platform", marks=pytest.mark.webtest)]
+                                    "Testery - Cloud-based continuous testing platform", marks=pytest.mark.webtest),
+                       pytest.param('http://www.testery.io',
+                                    "Bad Title", marks=[pytest.mark.fail, pytest.mark.webtest])]
 )
 def test_increment(selenium, url, title):
     selenium.get(url)
