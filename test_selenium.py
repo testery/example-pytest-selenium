@@ -5,6 +5,8 @@ import os
 @pytest.fixture
 def driver_args():
     if os.environ.get('IS_TESTERY') == 'true':
+        print(os.environ.get('TESTERY_CHROME_ARGS'))
+        print(os.environ.get('TESTERY_CHROME_ARGS').split(';'))
         return os.environ.get('TESTERY_CHROME_ARGS').split(';')
     else:
         return []
