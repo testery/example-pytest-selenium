@@ -24,7 +24,7 @@ def test_example(selenium):
                        pytest.param('http://www.testery.io',
                                     "Bad Title", marks=[pytest.mark.fail, pytest.mark.webtest])]
 )
-def test_increment(selenium, url, title):
+def test_site(selenium, url, title):
     selenium.get(url)
 
     assert selenium.title == title
