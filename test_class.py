@@ -5,7 +5,7 @@ import pytest
     ("value_one", "value_two"),
     [
         ("a", "a"),
-        ("b", "b"),
+        ("b::b", "b::b"),
         (True, True),
     ],
 )
