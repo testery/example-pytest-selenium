@@ -1,5 +1,6 @@
 import pytest
 import os
+import datetime
 
 
 @pytest.fixture
@@ -13,8 +14,6 @@ def chrome_options(chrome_options, pytestconfig):
 
 @pytest.mark.webtest
 def test_example(selenium):
-    f = open("text.txt", "r")
-    print("Test File content: " + f.read())
     selenium.get('http://www.testery.io')
 
     assert selenium.title == "Testery - Cloud-based continuous testing platform"
@@ -29,4 +28,13 @@ def test_example(selenium):
 def test_site(selenium, url, title):
     selenium.get(url)
 
+    take_screenshot(selenium)
     assert selenium.title == title
+
+
+def take_screenshot(selenium):
+    fulldate = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+    file_name = '/{0}.png'.format(fulldate)
+    path = "screenshots/" + file_name
+    print("Saving screenshot at: " + path)
+    selenium.save_screenshot(path)
