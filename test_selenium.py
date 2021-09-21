@@ -33,8 +33,7 @@ def test_site(selenium, url, title):
 
 
 def take_screenshot(selenium):
-    fulldate = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-    file_name = '/{0}.png'.format(fulldate)
-    path = "screenshots/" + file_name
-    print("Saving screenshot at: " + path)
+    date = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+    path = "screenshots/" + "{0}.png".format(date)
+    print("Saving screenshot to: " + path)
     selenium.save_screenshot(path)
