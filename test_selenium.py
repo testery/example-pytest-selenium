@@ -16,12 +16,12 @@ def chrome_options(chrome_options, pytestconfig):
 def test_example(selenium):
     selenium.get('http://www.testery.io')
 
-    assert selenium.title == "Testery - Cloud-based continuous testing platform"
+    assert selenium.title == "Testery - full-stack parallel testing"
 
 
 @pytest.mark.parametrize(
     ("url", "title"), [pytest.param('http://www.testery.io',
-                                    "Testery - Cloud-based continuous testing platform", marks=pytest.mark.webtest),
+                                    "Testery - full-stack parallel testing", marks=pytest.mark.webtest),
                        pytest.param('http://www.testery.io',
                                     "Bad Title", marks=[pytest.mark.fail, pytest.mark.webtest])]
 )
