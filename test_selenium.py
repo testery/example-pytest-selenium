@@ -15,7 +15,7 @@ def chrome_options(chrome_options, pytestconfig):
 @pytest.mark.webtest
 def test_example(selenium):
     selenium.get('http://www.testery.io')
-    take_screenshot()
+    take_screenshot(selenium)
 
     assert selenium.title == "Testery - full-stack parallel testing"
 
