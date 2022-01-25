@@ -29,7 +29,7 @@ def test_example(selenium):
 def test_site(selenium, url, title):
     selenium.get(url)
 
-    # take_screenshot(selenium)
+    take_screenshot(selenium)
     assert selenium.title == title
 
 
