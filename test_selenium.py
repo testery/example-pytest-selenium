@@ -23,7 +23,7 @@ def test_example(selenium):
 @pytest.mark.parametrize(
     ("url", "title"), [pytest.param('https://testery.io/pricing',
                                     "Testery - full-stack parallel testing", marks=pytest.mark.webtest),
-                       pytest.param('http://www.testery.io',
+                       pytest.param('https://testery.io/case-studies',
                                     "Bad Title", marks=[pytest.mark.fail, pytest.mark.webtest])]
 )
 def test_site(selenium, url, title):
