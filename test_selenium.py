@@ -17,7 +17,7 @@ def test_example(selenium):
     selenium.get('http://www.testery.io')
     take_screenshot(selenium)
 
-    assert selenium.title == "Testery - full-stack parallel testing"
+    assert selenium.title == "Testery - full-stack parallel testing test"
 
 
 @pytest.mark.parametrize(
