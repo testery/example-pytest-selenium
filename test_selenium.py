@@ -12,20 +12,19 @@ def chrome_options(chrome_options, pytestconfig):
     return chrome_options
 
 
-# @pytest.mark.webtest
-# def title_test_example(selenium):
-#     selenium.get('https://www.testery.io')
-#     take_screenshot(selenium)
-#
-#     assert selenium.title == "Testery - full-stack parallel testing"
-#
-#
-# @pytest.mark.webtest
-# def title_test_two_example(selenium):
-#     selenium.get('https://testery.io/services')
-#     take_screenshot(selenium)
-#
-#     assert selenium.title == "Testery - full-stack parallel testing"
+@pytest.mark.webtest
+def title_test_example(selenium):
+    selenium.get('https://www.testery.io')
+    take_screenshot(selenium)
+
+    assert selenium.title == "Testery - full-stack parallel testing"
+
+
+def title_test_two_example(selenium):
+    selenium.get('https://testery.io/services')
+    take_screenshot(selenium)
+
+    assert selenium.title == "Testery - full-stack parallel testing"
 
 
 @pytest.mark.parametrize(
