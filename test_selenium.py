@@ -13,14 +13,14 @@ def chrome_options(chrome_options, pytestconfig):
 
 
 @pytest.mark.webtest
-def title_test_example(selenium):
+def test_title_example(selenium):
     selenium.get('https://www.testery.io')
     take_screenshot(selenium)
 
     assert selenium.title == "Testery - full-stack parallel testing"
 
-
-def title_test_two_example(selenium):
+@pytest.mark.webtest
+def test_title_two_example(selenium):
     selenium.get('https://testery.io/services')
     take_screenshot(selenium)
 
