@@ -9,10 +9,12 @@ import pytest
         (True, True),
     ],
 )
+@pytest.mark.green
 def test_truth(value_one, value_two):
     assert value_one == value_two
 
 
+@pytest.mark.green
 class TestClass:
     def test_one(self):
         print("Hello from test_one")

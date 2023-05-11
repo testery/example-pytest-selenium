@@ -12,24 +12,27 @@ def chrome_options(chrome_options, pytestconfig):
     return chrome_options
 
 
+@pytest.mark.green
 @pytest.mark.webtest
 def test_title_example(selenium):
     selenium.get('https://www.testery.io')
     take_screenshot(selenium)
 
-    assert selenium.title == "Testery - full-stack parallel testing"
+    assert selenium.title == "Testery: modern test orchestration"
 
+
+@pytest.mark.green
 @pytest.mark.webtest
 def test_title_two_example(selenium):
     selenium.get('https://testery.io/services')
     take_screenshot(selenium)
 
-    assert selenium.title == "Testery - full-stack parallel testing"
+    assert selenium.title == "Testery: modern test orchestration"
 
 
 @pytest.mark.parametrize(
     ("url", "title"), [pytest.param('https://testery.io/pricing',
-                                    "Testery - full-stack parallel testing", marks=pytest.mark.webtest),
+                                    "Testery: modern test orchestration", marks=[pytest.mark.webtest, pytest.mark.green]),
                        pytest.param('https://testery.io/case-studies',
                                     "Bad Title", marks=[pytest.mark.fail, pytest.mark.webtest])]
 )
