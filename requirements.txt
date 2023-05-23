@@ -1,1 +1,3 @@
 pytest
+pytest-selenium
+flake8
