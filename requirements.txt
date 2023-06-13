@@ -1,3 +1,4 @@
-pytest
-pytest-selenium
-flake8
+pytest==7.3.2
+pytest-selenium==4.0.1
+selenium==4.9.1
+flake8==6.0.0
