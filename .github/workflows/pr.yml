@@ -1,0 +1,25 @@
+name: PR-Tests
+
+# Controls when the workflow will run
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review, synchronize]
+    branches:
+      - main
+
+jobs:
+  Testery_Run:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Install Testery CLI
+        run: |
+          pip install --upgrade testery
+
+      - name: Trigger Test Run
+        run: |
+          testery create-test-run --token "${{ secrets.TESTERY_TOKEN }}" \
+                                --project-key "example-pytest-selenium" \
+                                --environment-key "regression-1" \
+                                --git-ref "${{ github.event.pull_request.head.sha }}" \
+                                --git-branch "${{ github.ref }}"
