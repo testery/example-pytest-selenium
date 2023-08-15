@@ -14,7 +14,7 @@ def chrome_options(chrome_options, pytestconfig):
 
 @pytest.mark.green
 @pytest.mark.webtest
-@pytest.mark.hello
+@pytest.mark.hellogoodbye
 def test_title_example(selenium):
     selenium.get('https://www.testery.com')
     take_screenshot(selenium)
