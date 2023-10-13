@@ -3,3 +3,4 @@ pytest-selenium==4.0.1
 selenium==4.9.1
 flake8==6.0.0
 py==1.11.0
+dotenv==1.0.0
