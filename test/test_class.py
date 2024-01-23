@@ -1,4 +1,6 @@
 import pytest
+import pytz
+from datetime import datetime
 
 
 @pytest.mark.parametrize(
@@ -12,6 +14,12 @@ import pytest
 @pytest.mark.green
 def test_truth(value_one, value_two):
     assert value_one == value_two
+
+
+@pytest.mark.info
+def test_tz():
+    zones = pytz.all_timezones
+    print(zones)
 
 
 @pytest.mark.green
