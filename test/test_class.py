@@ -1,4 +1,5 @@
 import pytest
+import datetime
 import random
 
 
@@ -29,6 +30,19 @@ class TestClass:
 
 @pytest.mark.flaky
 class TestFlaky:
-    def test_flaky_one(self):
-        flip_coin = random.randint(0, 1)
-        assert flip_coin == 0
+    def test_flaky_time_based(self):
+        now = datetime.datetime.now()
+        minute = now.minute
+        if minute <= 15:
+            result = False
+        elif 15 < minute <= 30:
+            result = True
+        elif 30 < minute <= 45:
+            result = False
+        else:
+            result = True
+        assert result is True
+
+    def test_flaky_coin_toss(self):
+        coin_toss = random.randint(0, 1)
+        assert coin_toss == 0
