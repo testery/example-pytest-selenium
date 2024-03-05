@@ -1,4 +1,5 @@
 import pytest
+import random
 
 
 @pytest.mark.parametrize(
@@ -24,3 +25,10 @@ class TestClass:
     def test_two(self):
         x = "hello"
         assert x == "hello"
+
+
+@pytest.mark.flaky
+class TestFlaky:
+    def test_flaky_one(self):
+        flip_coin = random.randint(0, 1)
+        assert flip_coin == 0
