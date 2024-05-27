@@ -13,9 +13,10 @@
 ##Setup
 1) Install Python 3.9
 https://www.python.org/downloads/ (this also installs the python package-management system - pip)
-2) Set Python as the interpreter in your IDE
-https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html#python_create_virtual_env
-3) Install the ``requirements.txt`` through the IDE
+2) Set up virtual environment 
+
+3) Install the ``requirements.txt`` through the terminal
+   run ```pip install -r requirements.txt```
 
 ```json
 {
@@ -34,18 +35,6 @@ https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html#python_
 ```bash
 pytest . --driver Chrome
 ```
-
-Install required python libraries
-
-```pip install -r requirements.txt```
-
-Install pytest
-
-```pip install pytest```
-
-Install pytest and pytest-selenium
-
-```pip install pytest pytest-selenium```
 
 Install addition dependencies
 
