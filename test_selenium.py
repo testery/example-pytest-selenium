@@ -27,7 +27,7 @@ def test_title_two_example(selenium):
     selenium.get('https://testery.com/services')
     take_screenshot(selenium)
 
-    assert selenium.title == "Testery: modern test orchestration"
+    assert "Professional Services" in selenium.title
 
 
 @pytest.mark.parametrize(
