@@ -10,42 +10,41 @@
 
 ### Test Explorer settings.json file
 
-##Setup
-1) Install Python 3.9
-https://www.python.org/downloads/ (this also installs the python package-management system - pip)
-2) Set up virtual environment 
+## Setup
 
-3) Install the ``requirements.txt`` through the terminal
+1. Install [Python 3](https://www.python.org/downloads/) (this also installs the python package-management system - pip)
+
+1. Set up [virtual environment](https://docs.python.org/3/library/venv.html)
+
+1. Install the ``requirements.txt`` through the terminal
    run ```pip install -r requirements.txt```
 
-```json
-{
-    "python.testing.pytestArgs": [
-        ".",
-        "--driver",
-        "Chrome"
-    ],
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
-}
-```
+1. Set up any IDE configurations
 
-## Command Line
+    ```json
+    {
+        "python.testing.pytestArgs": [
+            ".",
+            "--driver",
+            "Chrome"
+        ],
+        "python.testing.unittestEnabled": false,
+        "python.testing.pytestEnabled": true
+    }
+    ```
 
-```bash
-pytest . --driver Chrome
-```
-
-Install addition dependencies
-
-```pip install webdriver-manager```
-
-##Sample pytest commands and arguments
+## Sample pytest commands and arguments
 
 Pytest help
 
 ```pytest --help```
 
-Run sample tests in a file
+Run sample non-selenium tests in a file
 
-```pytest -s test/test_basic.py```
+```pytest -s test/test_class.py```
+
+Run selenium tests in a file
+
+```pytest ./test_selenium.py --driver Chrome```
+
+```pytest ./test/test_basic.py --driver Chrome```
