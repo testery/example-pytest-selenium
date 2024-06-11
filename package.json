@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "testeryPreRunScript": "apt-get install -y liblzma-dev"  },
+    "testeryPreRunScript": "node -e \"console.log('prerun script started at: %s', Date())\" && apt-get install -y liblzma-dev"  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/testery/example-pytest-selenium.git"
