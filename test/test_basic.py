@@ -4,8 +4,16 @@ from datetime import datetime
 import pytz
 
 
+def take_screenshot(chrome_browser):
+    date = datetime.now().strftime('%Y%m%d_%H%M%S')
+    path = "../screenshots/" + "{0}.png".format(date)
+    print("Saving screenshot to: " + path)
+    chrome_browser.save_screenshot(path)
+
+
 def test_title(chrome_browser):
     chrome_browser.get("https://www.python.org")
+    take_screenshot(chrome_browser)
     assert chrome_browser.title == "Welcome to Python.org"
 
 
@@ -34,4 +42,5 @@ def test_timezone(chrome_browser):
 
     chrome_browser.get("https://time.gov/")
     browser_tz = chrome_browser.find_element(By.ID, 'myTimeTitle').text
+    take_screenshot(chrome_browser)
     assert expected_tz == browser_tz

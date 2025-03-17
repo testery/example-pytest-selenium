@@ -18,7 +18,7 @@ def test_title_example(selenium):
     selenium.get('https://www.testery.com')
     take_screenshot(selenium)
 
-    assert selenium.title == "Testery: modern test orchestration"
+    assert selenium.title == "Testery: turbocharged test orchestration"
 
 
 @pytest.mark.green
@@ -32,7 +32,7 @@ def test_title_two_example(selenium):
 
 @pytest.mark.parametrize(
     ("url", "title"), [pytest.param('https://testery.io/pricing',
-                                    "Testery: modern test orchestration",
+                                    "Testery: turbocharged test orchestration",
                                     marks=[pytest.mark.webtest, pytest.mark.green]),
                        pytest.param('https://testery.io/case-studies',
                                     "Bad Title",
