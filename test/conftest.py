@@ -9,7 +9,6 @@ def chrome_browser():
     if os.environ.get('IS_TESTERY') == 'true':
         for arg in os.environ.get('TESTERY_CHROME_ARGS').split(';'):
             options.add_argument(arg)
-    options.add_argument("--headless")  # Run Chrome in headless mode
     options.add_argument('--timezone="America/Los_Angeles"')
     service = webdriver.ChromeService()
     driver = webdriver.Chrome(options=options, service=service)
