@@ -43,7 +43,8 @@ def test_timezone(chrome_browser):
     assert formatted_time == actual_time.strftime("%Y-%m-%d %H:%M:%S")
 
     chrome_browser.get("https://time.gov/")
-    WebDriverWait(chrome_browser, 3).until(EC.visibility_of_element_located((By.ID, 'analog-clock')))
+    WebDriverWait(chrome_browser, 10).until(lambda driver: driver.execute_script('return document.readyState') == 'complete')
+    #.until(EC.visibility_of_element_located((By.ID, 'analog-clock')))
     browser_tz = chrome_browser.find_element(By.ID, 'myTimeTitle').text
     take_screenshot(chrome_browser)
     assert expected_tz == browser_tz
