@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import requests
 from datetime import datetime
 import pytz
@@ -6,7 +8,7 @@ import pytz
 
 def take_screenshot(chrome_browser):
     date = datetime.now().strftime('%Y%m%d_%H%M%S')
-    path = "../screenshots/" + "{0}.png".format(date)
+    path = "screenshots/" + "{0}.png".format(date)
     print("Saving screenshot to: " + path)
     chrome_browser.save_screenshot(path)
 
@@ -41,6 +43,7 @@ def test_timezone(chrome_browser):
     assert formatted_time == actual_time.strftime("%Y-%m-%d %H:%M:%S")
 
     chrome_browser.get("https://time.gov/")
+    WebDriverWait(chrome_browser, 3).until(EC.visibility_of_element_located((By.ID, 'analog-clock')))
     browser_tz = chrome_browser.find_element(By.ID, 'myTimeTitle').text
     take_screenshot(chrome_browser)
     assert expected_tz == browser_tz
