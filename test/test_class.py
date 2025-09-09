@@ -9,7 +9,7 @@ import pytest
         (True, True),
     ],
 )
-@pytest.mark.green
+@pytest.mark.red
 def test_truth(value_one, value_two):
     assert value_one == value_two
 
