@@ -17,7 +17,7 @@ def test_truth(value_one, value_two):
 @pytest.mark.green
 class TestClass:
     def test_one(self):
-        print("Hello from test_one")
+        print("Hello from test_one a")
         x = "this"
         assert "h" in x
 

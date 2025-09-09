@@ -7,7 +7,5 @@ test_selection:
             - src_changes:
                 - test/test_class.py
           then:
-            - include_tags:
-                - green
-            - include_tags:
-                - red
+            - test_filters:
+                - test/test_basic.py
