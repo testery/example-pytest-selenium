@@ -1,0 +1,13 @@
+test_selection:
+  suites:
+    - default:
+      rules:
+        - googleRule:
+          when:
+            - src_changes:
+                - test/test_basic.py
+          then:
+            - test_filters:
+                - test/test_basic.py
+            - include_tags:
+                - green   
