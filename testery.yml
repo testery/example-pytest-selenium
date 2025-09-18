@@ -3,9 +3,3 @@ test_selection:
     - default:
       rules:
         - googleRule:
-          when:
-            - src_changes:
-                - test/test_class.py
-          then:
-            - test_filters:
-                - test/**
