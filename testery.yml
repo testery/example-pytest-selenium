@@ -7,6 +7,5 @@ test_selection:
             - src_changes:
                 - test/test_basic.py
           then:
-            - include_tags:
-                - green
-                - webtest
+            - exclude_tags:
+                - red
