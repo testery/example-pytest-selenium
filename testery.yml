@@ -7,6 +7,5 @@ test_selection:
             - src_changes:
                 - test/test_basic.py
           then:
-            - exclude_tags:
-            - include_tags:
             - test_filters:
+              - [abc
