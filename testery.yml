@@ -8,4 +8,4 @@ test_selection:
                 - test/test_basic.py
           then:
             - test_filters:
-              - [abc
+              - test/.*
