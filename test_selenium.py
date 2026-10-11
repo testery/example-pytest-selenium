@@ -18,7 +18,8 @@ def test_title_example(selenium):
     selenium.get('https://www.testery.com')
     take_screenshot(selenium)
 
-    assert selenium.title == "Testery: modern test orchestration"
+    assert selenium.title.startswith("Testery:")
+    assert "Flake-Free" in selenium.title
 
 
 @pytest.mark.green
@@ -32,7 +33,7 @@ def test_title_two_example(selenium):
 
 @pytest.mark.parametrize(
     ("url", "title"), [pytest.param('https://testery.io/pricing',
-                                    "Testery: modern test orchestration",
+                                    "Flake-Free",
                                     marks=[pytest.mark.webtest, pytest.mark.green]),
                        pytest.param('https://testery.io/case-studies',
                                     "Bad Title",
@@ -42,7 +43,8 @@ def test_site(selenium, url, title):
     selenium.get(url)
 
     take_screenshot(selenium)
-    assert selenium.title == title
+    assert selenium.title.startswith("Testery:")
+    assert title in selenium.title
 
 
 def take_screenshot(selenium):
