@@ -131,3 +131,6 @@ dmypy.json
 
 # vscode
 .vscode
+
+# live_repl command/output files for the pdb/CDP experiment
+.live_repl/
